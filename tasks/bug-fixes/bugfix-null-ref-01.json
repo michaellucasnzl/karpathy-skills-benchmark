@@ -1,0 +1,34 @@
+﻿{
+    "fixture":  "dotnet-minimal-api",
+    "id":  "bugfix-null-ref-01",
+    "title":  "Fix NullReferenceException in UserService.GetById",
+    "tags":  [
+                 "null-handling",
+                 "api",
+                 "surgical"
+             ],
+    "category":  "bug-fixes",
+    "prompt":  "When calling GET /users/999, the API throws a NullReferenceException. Fix it so it returns 404 instead.",
+    "startingCommit":  "main",
+    "temptations":  [
+                        "overengineer"
+                    ],
+    "difficulty":  "easy",
+    "estimatedLinesChanged":  3,
+    "expectedBehavior":  [
+                             "GET /users/999 returns 404 Not Found"
+                         ],
+    "successCriteria":  [
+                            {
+                                "command":  "dotnet test",
+                                "type":  "test",
+                                "expectPass":  true
+                            },
+                            {
+                                "rubric":  "rubrics/bugfix-null-ref-01.md",
+                                "minScore":  4,
+                                "type":  "llmJudge"
+                            }
+                        ],
+    "timeoutMinutes":  10
+}

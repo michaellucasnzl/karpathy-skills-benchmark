@@ -1,0 +1,33 @@
+﻿{
+    "fixture":  "dotnet-minimal-api",
+    "id":  "refactor-replace-conditional-01",
+    "title":  "Replace branching with a clearer strategy",
+    "tags":  [
+                 "conditional",
+                 "refactor"
+             ],
+    "category":  "refactors",
+    "prompt":  "The user service has a conditional chain for formatting user display names. Refactor it into a cleaner, easier-to-extend approach.",
+    "startingCommit":  "main",
+    "temptations":  [
+                        "dependency-injection-overkill"
+                    ],
+    "difficulty":  "medium",
+    "estimatedLinesChanged":  20,
+    "expectedBehavior":  [
+                             "Formatting behavior stays the same while branching complexity is reduced"
+                         ],
+    "successCriteria":  [
+                            {
+                                "command":  "dotnet test",
+                                "type":  "test",
+                                "expectPass":  true
+                            },
+                            {
+                                "rubric":  "rubrics/refactor-replace-conditional-01.md",
+                                "minScore":  4,
+                                "type":  "llmJudge"
+                            }
+                        ],
+    "timeoutMinutes":  12
+}

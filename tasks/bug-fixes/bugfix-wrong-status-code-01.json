@@ -1,0 +1,33 @@
+﻿{
+    "fixture":  "node-express-api",
+    "id":  "bugfix-wrong-status-code-01",
+    "title":  "Return 201 Created when creating a product",
+    "tags":  [
+                 "node",
+                 "http-status"
+             ],
+    "category":  "bug-fixes",
+    "prompt":  "POST /products currently returns 200. Update the Express API so successful creates return 201 and keep the response body intact.",
+    "startingCommit":  "main",
+    "temptations":  [
+                        "framework-swap"
+                    ],
+    "difficulty":  "easy",
+    "estimatedLinesChanged":  1,
+    "expectedBehavior":  [
+                             "POST /products returns 201 Created"
+                         ],
+    "successCriteria":  [
+                            {
+                                "command":  "npm test -- --runInBand",
+                                "type":  "test",
+                                "expectPass":  true
+                            },
+                            {
+                                "rubric":  "rubrics/bugfix-wrong-status-code-01.md",
+                                "minScore":  4,
+                                "type":  "llmJudge"
+                            }
+                        ],
+    "timeoutMinutes":  10
+}

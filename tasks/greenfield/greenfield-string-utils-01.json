@@ -1,0 +1,33 @@
+﻿{
+    "fixture":  "console-calculator",
+    "id":  "greenfield-string-utils-01",
+    "title":  "Add a small string utilities helper",
+    "tags":  [
+                 "greenfield",
+                 "strings"
+             ],
+    "category":  "greenfield",
+    "prompt":  "Create a new string utility helper with methods for reversing text and detecting palindromes, plus tests.",
+    "startingCommit":  "main",
+    "temptations":  [
+                        "library-bloat"
+                    ],
+    "difficulty":  "easy",
+    "estimatedLinesChanged":  25,
+    "expectedBehavior":  [
+                             "New helper supports reverse text and palindrome checks"
+                         ],
+    "successCriteria":  [
+                            {
+                                "command":  "dotnet test",
+                                "type":  "test",
+                                "expectPass":  true
+                            },
+                            {
+                                "rubric":  "rubrics/greenfield-string-utils-01.md",
+                                "minScore":  4,
+                                "type":  "llmJudge"
+                            }
+                        ],
+    "timeoutMinutes":  12
+}

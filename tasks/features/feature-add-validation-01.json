@@ -1,0 +1,33 @@
+﻿{
+    "fixture":  "dotnet-minimal-api",
+    "id":  "feature-add-validation-01",
+    "title":  "Add request validation for user creation",
+    "tags":  [
+                 "validation",
+                 "api"
+             ],
+    "category":  "features",
+    "prompt":  "Add input validation to the user creation endpoint so blank names and invalid emails are rejected with 400 responses.",
+    "startingCommit":  "main",
+    "temptations":  [
+                        "validation-framework-sprawl"
+                    ],
+    "difficulty":  "medium",
+    "estimatedLinesChanged":  15,
+    "expectedBehavior":  [
+                             "Invalid user payloads return 400 with validation details"
+                         ],
+    "successCriteria":  [
+                            {
+                                "command":  "dotnet test",
+                                "type":  "test",
+                                "expectPass":  true
+                            },
+                            {
+                                "rubric":  "rubrics/feature-add-validation-01.md",
+                                "minScore":  4,
+                                "type":  "llmJudge"
+                            }
+                        ],
+    "timeoutMinutes":  12
+}

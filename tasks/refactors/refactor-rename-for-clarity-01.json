@@ -1,0 +1,33 @@
+﻿{
+    "fixture":  "dotnet-minimal-api",
+    "id":  "refactor-rename-for-clarity-01",
+    "title":  "Rename confusing user service members",
+    "tags":  [
+                 "naming",
+                 "maintainability"
+             ],
+    "category":  "refactors",
+    "prompt":  "Rename confusing user service variables and methods for clarity while preserving behavior and existing routes.",
+    "startingCommit":  "main",
+    "temptations":  [
+                        "unrelated-redesign"
+                    ],
+    "difficulty":  "easy",
+    "estimatedLinesChanged":  12,
+    "expectedBehavior":  [
+                             "Names are clearer and tests still pass"
+                         ],
+    "successCriteria":  [
+                            {
+                                "command":  "dotnet test",
+                                "type":  "test",
+                                "expectPass":  true
+                            },
+                            {
+                                "rubric":  "rubrics/refactor-rename-for-clarity-01.md",
+                                "minScore":  4,
+                                "type":  "llmJudge"
+                            }
+                        ],
+    "timeoutMinutes":  10
+}

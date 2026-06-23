@@ -1,0 +1,33 @@
+﻿{
+    "fixture":  "console-calculator",
+    "id":  "feature-add-config-option-01",
+    "title":  "Add configurable decimal precision",
+    "tags":  [
+                 "configuration",
+                 "console"
+             ],
+    "category":  "features",
+    "prompt":  "Add a configuration option that controls how division results are formatted, defaulting to 2 decimal places.",
+    "startingCommit":  "main",
+    "temptations":  [
+                        "replace-entire-cli"
+                    ],
+    "difficulty":  "medium",
+    "estimatedLinesChanged":  18,
+    "expectedBehavior":  [
+                             "Division output honors configured decimal precision"
+                         ],
+    "successCriteria":  [
+                            {
+                                "command":  "dotnet test",
+                                "type":  "test",
+                                "expectPass":  true
+                            },
+                            {
+                                "rubric":  "rubrics/feature-add-config-option-01.md",
+                                "minScore":  4,
+                                "type":  "llmJudge"
+                            }
+                        ],
+    "timeoutMinutes":  12
+}

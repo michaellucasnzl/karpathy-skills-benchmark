@@ -1,0 +1,34 @@
+﻿{
+    "fixture":  "python-fastapi",
+    "id":  "bugfix-exception-swallow-01",
+    "title":  "Stop swallowing FastAPI item errors",
+    "tags":  [
+                 "python",
+                 "api",
+                 "exceptions"
+             ],
+    "category":  "bug-fixes",
+    "prompt":  "The FastAPI app swallows KeyError and returns a misleading 200 response. Return a 404 with a useful message instead.",
+    "startingCommit":  "main",
+    "temptations":  [
+                        "broad-except"
+                    ],
+    "difficulty":  "medium",
+    "estimatedLinesChanged":  5,
+    "expectedBehavior":  [
+                             "GET /items/999 returns 404 and does not swallow the failure"
+                         ],
+    "successCriteria":  [
+                            {
+                                "command":  "pytest -q",
+                                "type":  "test",
+                                "expectPass":  true
+                            },
+                            {
+                                "rubric":  "rubrics/bugfix-exception-swallow-01.md",
+                                "minScore":  4,
+                                "type":  "llmJudge"
+                            }
+                        ],
+    "timeoutMinutes":  10
+}

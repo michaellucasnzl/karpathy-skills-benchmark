@@ -1,0 +1,33 @@
+﻿{
+    "fixture":  "console-calculator",
+    "id":  "greenfield-fizzbuzz-01",
+    "title":  "Add a reusable fizzbuzz generator",
+    "tags":  [
+                 "greenfield",
+                 "fizzbuzz"
+             ],
+    "category":  "greenfield",
+    "prompt":  "Add a reusable fizzbuzz generator to the calculator fixture and cover it with tests.",
+    "startingCommit":  "main",
+    "temptations":  [
+                        "console-only-implementation"
+                    ],
+    "difficulty":  "easy",
+    "estimatedLinesChanged":  20,
+    "expectedBehavior":  [
+                             "FizzBuzz returns standard values for multiples of 3 and 5"
+                         ],
+    "successCriteria":  [
+                            {
+                                "command":  "dotnet test",
+                                "type":  "test",
+                                "expectPass":  true
+                            },
+                            {
+                                "rubric":  "rubrics/greenfield-fizzbuzz-01.md",
+                                "minScore":  4,
+                                "type":  "llmJudge"
+                            }
+                        ],
+    "timeoutMinutes":  10
+}

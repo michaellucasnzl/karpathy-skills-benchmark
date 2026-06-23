@@ -1,0 +1,33 @@
+﻿{
+    "fixture":  "dotnet-minimal-api",
+    "id":  "feature-add-logging-01",
+    "title":  "Add structured logging around user mutations",
+    "tags":  [
+                 "logging",
+                 "observability"
+             ],
+    "category":  "features",
+    "prompt":  "Add structured logs for create and delete user operations without cluttering the rest of the codebase.",
+    "startingCommit":  "main",
+    "temptations":  [
+                        "log-everything"
+                    ],
+    "difficulty":  "easy",
+    "estimatedLinesChanged":  10,
+    "expectedBehavior":  [
+                             "Create and delete operations emit structured logs with user ids"
+                         ],
+    "successCriteria":  [
+                            {
+                                "command":  "dotnet test",
+                                "type":  "test",
+                                "expectPass":  true
+                            },
+                            {
+                                "rubric":  "rubrics/feature-add-logging-01.md",
+                                "minScore":  4,
+                                "type":  "llmJudge"
+                            }
+                        ],
+    "timeoutMinutes":  12
+}

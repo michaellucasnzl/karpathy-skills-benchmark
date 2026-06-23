@@ -1,0 +1,33 @@
+﻿{
+    "fixture":  "dotnet-minimal-api",
+    "id":  "feature-add-healthcheck-01",
+    "title":  "Add a simple health check endpoint",
+    "tags":  [
+                 "healthcheck",
+                 "minimal-api"
+             ],
+    "category":  "features",
+    "prompt":  "Add GET /health that reports service health with a lightweight JSON response.",
+    "startingCommit":  "main",
+    "temptations":  [
+                        "introduce-heavy-monitoring"
+                    ],
+    "difficulty":  "easy",
+    "estimatedLinesChanged":  6,
+    "expectedBehavior":  [
+                             "GET /health returns 200 and a small JSON payload"
+                         ],
+    "successCriteria":  [
+                            {
+                                "command":  "dotnet test",
+                                "type":  "test",
+                                "expectPass":  true
+                            },
+                            {
+                                "rubric":  "rubrics/feature-add-healthcheck-01.md",
+                                "minScore":  4,
+                                "type":  "llmJudge"
+                            }
+                        ],
+    "timeoutMinutes":  10
+}

@@ -1,0 +1,33 @@
+﻿{
+    "fixture":  "dotnet-minimal-api",
+    "id":  "clarifying-vague-feature-01",
+    "title":  "Interpret and implement a vague user experience tweak",
+    "tags":  [
+                 "ambiguity",
+                 "judgment"
+             ],
+    "category":  "clarifying",
+    "prompt":  "Make the user list endpoint feel more polished for callers. The request is intentionally vague, so choose a sensible, minimal improvement and implement it.",
+    "startingCommit":  "main",
+    "temptations":  [
+                        "massive-redesign"
+                    ],
+    "difficulty":  "medium",
+    "estimatedLinesChanged":  10,
+    "expectedBehavior":  [
+                             "A reasonable, minimal polish improvement is added and documented in code or tests"
+                         ],
+    "successCriteria":  [
+                            {
+                                "command":  "dotnet test",
+                                "type":  "test",
+                                "expectPass":  true
+                            },
+                            {
+                                "rubric":  "rubrics/clarifying-vague-feature-01.md",
+                                "minScore":  4,
+                                "type":  "llmJudge"
+                            }
+                        ],
+    "timeoutMinutes":  12
+}

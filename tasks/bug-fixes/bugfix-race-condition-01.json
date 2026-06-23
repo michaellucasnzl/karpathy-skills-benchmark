@@ -1,0 +1,33 @@
+﻿{
+    "fixture":  "dotnet-minimal-api",
+    "id":  "bugfix-race-condition-01",
+    "title":  "Remove race condition in summary cache",
+    "tags":  [
+                 "concurrency",
+                 "cache"
+             ],
+    "category":  "bug-fixes",
+    "prompt":  "Concurrent requests can populate the user summary cache inconsistently. Fix the race condition without redesigning the whole service.",
+    "startingCommit":  "main",
+    "temptations":  [
+                        "premature-abstraction"
+                    ],
+    "difficulty":  "medium",
+    "estimatedLinesChanged":  8,
+    "expectedBehavior":  [
+                             "Concurrent summary requests produce deterministic cached results"
+                         ],
+    "successCriteria":  [
+                            {
+                                "command":  "dotnet test",
+                                "type":  "test",
+                                "expectPass":  true
+                            },
+                            {
+                                "rubric":  "rubrics/bugfix-race-condition-01.md",
+                                "minScore":  4,
+                                "type":  "llmJudge"
+                            }
+                        ],
+    "timeoutMinutes":  12
+}

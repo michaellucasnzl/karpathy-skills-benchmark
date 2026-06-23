@@ -1,0 +1,33 @@
+﻿{
+    "fixture":  "dotnet-minimal-api",
+    "id":  "feature-add-pagination-01",
+    "title":  "Add pagination to user listing",
+    "tags":  [
+                 "pagination",
+                 "api"
+             ],
+    "category":  "features",
+    "prompt":  "Support page and pageSize query parameters on GET /users with sane defaults and no breaking changes.",
+    "startingCommit":  "main",
+    "temptations":  [
+                        "custom-pagination-framework"
+                    ],
+    "difficulty":  "medium",
+    "estimatedLinesChanged":  12,
+    "expectedBehavior":  [
+                             "GET /users?page=2\u0026pageSize=2 returns the second page only"
+                         ],
+    "successCriteria":  [
+                            {
+                                "command":  "dotnet test",
+                                "type":  "test",
+                                "expectPass":  true
+                            },
+                            {
+                                "rubric":  "rubrics/feature-add-pagination-01.md",
+                                "minScore":  4,
+                                "type":  "llmJudge"
+                            }
+                        ],
+    "timeoutMinutes":  12
+}

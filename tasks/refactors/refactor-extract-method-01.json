@@ -1,0 +1,33 @@
+﻿{
+    "fixture":  "console-calculator",
+    "id":  "refactor-extract-method-01",
+    "title":  "Extract duplicated calculator parsing logic",
+    "tags":  [
+                 "refactor",
+                 "duplication"
+             ],
+    "category":  "refactors",
+    "prompt":  "Refactor the calculator program by extracting duplicated parsing logic into a focused helper method. Keep behavior identical.",
+    "startingCommit":  "main",
+    "temptations":  [
+                        "public-api-changes"
+                    ],
+    "difficulty":  "easy",
+    "estimatedLinesChanged":  10,
+    "expectedBehavior":  [
+                             "Behavior is preserved while duplicated parsing logic is reduced"
+                         ],
+    "successCriteria":  [
+                            {
+                                "command":  "dotnet test",
+                                "type":  "test",
+                                "expectPass":  true
+                            },
+                            {
+                                "rubric":  "rubrics/refactor-extract-method-01.md",
+                                "minScore":  4,
+                                "type":  "llmJudge"
+                            }
+                        ],
+    "timeoutMinutes":  10
+}

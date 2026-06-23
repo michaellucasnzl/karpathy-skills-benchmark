@@ -1,0 +1,33 @@
+﻿{
+    "fixture":  "console-calculator",
+    "id":  "greenfield-csv-parser-01",
+    "title":  "Add a lightweight CSV parser",
+    "tags":  [
+                 "greenfield",
+                 "csv"
+             ],
+    "category":  "greenfield",
+    "prompt":  "Implement a lightweight CSV parser that handles commas, quotes, and escaped quotes in a pragmatic way.",
+    "startingCommit":  "main",
+    "temptations":  [
+                        "pull-in-large-parser-package"
+                    ],
+    "difficulty":  "medium",
+    "estimatedLinesChanged":  35,
+    "expectedBehavior":  [
+                             "Parser handles basic quoted CSV rows correctly"
+                         ],
+    "successCriteria":  [
+                            {
+                                "command":  "dotnet test",
+                                "type":  "test",
+                                "expectPass":  true
+                            },
+                            {
+                                "rubric":  "rubrics/greenfield-csv-parser-01.md",
+                                "minScore":  4,
+                                "type":  "llmJudge"
+                            }
+                        ],
+    "timeoutMinutes":  15
+}

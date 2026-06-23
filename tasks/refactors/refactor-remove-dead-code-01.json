@@ -1,0 +1,33 @@
+﻿{
+    "fixture":  "dotnet-minimal-api",
+    "id":  "refactor-remove-dead-code-01",
+    "title":  "Remove dead code from user API fixture",
+    "tags":  [
+                 "cleanup",
+                 "dead-code"
+             ],
+    "category":  "refactors",
+    "prompt":  "Remove obviously dead code and unused members that are safe to delete from the .NET API fixture.",
+    "startingCommit":  "main",
+    "temptations":  [
+                        "large-refactor"
+                    ],
+    "difficulty":  "easy",
+    "estimatedLinesChanged":  8,
+    "expectedBehavior":  [
+                             "Dead code is removed without changing observable behavior"
+                         ],
+    "successCriteria":  [
+                            {
+                                "command":  "dotnet test",
+                                "type":  "test",
+                                "expectPass":  true
+                            },
+                            {
+                                "rubric":  "rubrics/refactor-remove-dead-code-01.md",
+                                "minScore":  4,
+                                "type":  "llmJudge"
+                            }
+                        ],
+    "timeoutMinutes":  10
+}

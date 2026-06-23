@@ -1,0 +1,33 @@
+﻿{
+    "fixture":  "console-calculator",
+    "id":  "bugfix-off-by-one-01",
+    "title":  "Fix off-by-one bug in calculator range function",
+    "tags":  [
+                 "off-by-one",
+                 "logic"
+             ],
+    "category":  "bug-fixes",
+    "prompt":  "The range helper returns one extra value. Fix the off-by-one bug without changing the public API.",
+    "startingCommit":  "main",
+    "temptations":  [
+                        "rewrite-everything"
+                    ],
+    "difficulty":  "easy",
+    "estimatedLinesChanged":  2,
+    "expectedBehavior":  [
+                             "BuildRange(1, 3) returns 1, 2, 3 only"
+                         ],
+    "successCriteria":  [
+                            {
+                                "command":  "dotnet test",
+                                "type":  "test",
+                                "expectPass":  true
+                            },
+                            {
+                                "rubric":  "rubrics/bugfix-off-by-one-01.md",
+                                "minScore":  4,
+                                "type":  "llmJudge"
+                            }
+                        ],
+    "timeoutMinutes":  10
+}

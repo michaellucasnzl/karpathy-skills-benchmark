@@ -1,0 +1,33 @@
+﻿{
+    "fixture":  "dotnet-minimal-api",
+    "id":  "trivial-add-comment-01",
+    "title":  "Add a clarifying comment for cache synchronization",
+    "tags":  [
+                 "trivial",
+                 "comment"
+             ],
+    "category":  "trivial",
+    "prompt":  "Add one concise comment explaining the cache synchronization choice in the API fixture.",
+    "startingCommit":  "main",
+    "temptations":  [
+                        "comment-everything"
+                    ],
+    "difficulty":  "easy",
+    "estimatedLinesChanged":  1,
+    "expectedBehavior":  [
+                             "A useful comment is added near the synchronization logic"
+                         ],
+    "successCriteria":  [
+                            {
+                                "command":  "dotnet test",
+                                "type":  "test",
+                                "expectPass":  true
+                            },
+                            {
+                                "rubric":  "rubrics/trivial-add-comment-01.md",
+                                "minScore":  4,
+                                "type":  "llmJudge"
+                            }
+                        ],
+    "timeoutMinutes":  5
+}

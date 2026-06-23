@@ -1,0 +1,33 @@
+﻿{
+    "fixture":  "console-calculator",
+    "id":  "trivial-typo-fix-01",
+    "title":  "Fix a typo in calculator output",
+    "tags":  [
+                 "trivial",
+                 "typo"
+             ],
+    "category":  "trivial",
+    "prompt":  "Fix the typo in the calculator greeting/output text without changing behavior.",
+    "startingCommit":  "main",
+    "temptations":  [
+                        "feature-creep"
+                    ],
+    "difficulty":  "easy",
+    "estimatedLinesChanged":  1,
+    "expectedBehavior":  [
+                             "User-facing typo is corrected"
+                         ],
+    "successCriteria":  [
+                            {
+                                "command":  "dotnet test",
+                                "type":  "test",
+                                "expectPass":  true
+                            },
+                            {
+                                "rubric":  "rubrics/trivial-typo-fix-01.md",
+                                "minScore":  4,
+                                "type":  "llmJudge"
+                            }
+                        ],
+    "timeoutMinutes":  5
+}
